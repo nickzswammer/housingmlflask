@@ -41,7 +41,8 @@ def calculator():
         predictions = model.predict([[longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income]])
 
         new_pred = predictions.tolist()
-        return f'<br><br><br><br><br><br><br><br><br><br><br><br><h1><center> Predicted House Price is: ${str(round(new_pred[0]))}</center></h1>'
+        num = str(round(new_pred[0]))
+        return f'<br><br><br><br><br><br><br><br><br><br><br><br><h1><center> Predicted House Price is: ${num}</center></h1>'
     else:
         return render_template("calculator.html")
 
