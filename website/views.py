@@ -37,11 +37,13 @@ def calculator():
         population = request.form['People']
         households = request.form['Households']
         median_income = request.form['Income']
-        predictions = model.predict([[longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income]])
-        return render_template("calculator.html", predictions=predictions)
 
-    else:
-        return render_template('calculator.html')
+        predictions = model.predict([[longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income]])
+
+        new_pred = predictions.tolist()
+        num = str(round(new_pred[0]))
+        return render_template('calculator.html', num=num)
+
 
 @views.route('/about')
 def about():
