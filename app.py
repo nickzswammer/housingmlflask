@@ -42,7 +42,7 @@ def calculator():
 
         new_pred = predictions.tolist()
         num = str(round(new_pred[0]))
-        return render_template('calculator.html', num=num)
+        return render_template('calculator.html')
     return render_template('calculator.html')
 
 
