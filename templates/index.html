@@ -2,15 +2,27 @@
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
-<head>
-    <h1>Welcome to my website!</h1>
-</head>
-<body>
-    <h3><a href="/calculator">Click Here for the calculator or use the Navbar above.</a></h3>
-    
-    <img src="../static/housephoto.jpg" alt="California House" width=1024 height=585>
-</body>
+<form action='/predict' method='post'>
+    <h2>All values will be all the houses within a block </h2>
+    <h4>(Enter decimals to the hundred's place for all)</h4>
+    <p>Longitude (Larger longitude means higher price)</p>
+    <p><input type='number' step='0.01' name='Longitude' /></p>
+    <p>Latitude (Larger latitude means higher price)</p>
+    <p><input type='number' step='0.01' name='Latitude' /></p>
+    <p>Median age of a house</p>
+    <p><input type='number' step='0.01' name='Median Age' /></p>
+    <p>Total rooms</p>
+    <p><input type='number' step='0.01' name='Rooms' /></p>
+    <p>Total Bedrooms</p>
+    <p><input type='number' step='0.01' name='Bedrooms' /></p>
+    <p>Population</p>
+    <p><input type='number' step='0.01' name='People' /></p>
+    <p>Households</p>
+    <p><input type='number' step='0.01' name='Households' /></p>
+    <p>Income</p>
+    <p><input type='number' step='0.01' name='Income' /></p>
+    <p><input type='submit' value='submit'/> </p>
 
-
+</form>
 
 {% endblock %}
